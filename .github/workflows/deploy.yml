@@ -9,20 +9,15 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x]
-
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 12.x
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 12.x
     - name: Setup Java JDK
       uses: actions/setup-java@v1.4.3
       with:
-        # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
         java-version: 1.8
     - run: npm ci
       working-directory: ./frontend
