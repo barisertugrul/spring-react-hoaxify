@@ -1,0 +1,49 @@
+name: Hoaxify Deploy
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Setup Java JDK
+      uses: actions/setup-java@v3.3.0
+      with:
+        # The Java version to set up. Takes a whole or semver Java version. See examples of supported syntax in README file
+        java-version: 1.8
+    - run: npm ci
+      working-directory: ./frontend
+    - run: npm run build --if-present
+      working-directory: ./frontend
+    
+    - name: copy react to spring static resources
+      run: |
+        mkdir -p ws/src/main/resources/static
+        cp -a frontend/buil/. ws/src/main/resources/static/
+        
+    - name: Build spring
+      run: mvn -B package --file pom.xml
+      working-directory: ./ws
+      
+    - name: SFTP Deploy
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.2
+      with:
+        username: ${{secrets.USERNAME}}
+        server: ${{secrets.IP}}
+        ssh_private_key: ${{secrets.SSH}}
+        local_path: ws/target/ws-0.0.1-SNAPSHOT.jar
+        remote_path: home/b3rtugrul
