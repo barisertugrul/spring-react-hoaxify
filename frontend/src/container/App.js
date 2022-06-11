@@ -3,7 +3,7 @@ import './App.css';
 import UserSignupPage from '../pages/UserSignupPage';
 import UserLoginPage from '../pages/UserLoginPage';
 import LanguageSelector from '../components/LanguageSelector'
-import ApiProgress from '../shared/ApiProgress'
+//import ApiProgress from '../shared/ApiProgress'
 import HomePage from '../pages/HomePage';
 import UserPage from '../pages/UserPage';
 import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
