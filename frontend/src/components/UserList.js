@@ -17,8 +17,11 @@ const UserList = () => {
 
     const pendingApiCall = useApiProgress('get','/api/1.0/users?page')
     
-    useEffect(async () =>  {
+    useEffect(() => {
+        async function fncResponse() {
          const response = await loadUsers();
+        }
+        fncResponse()
     }, [])
 
     const onClickNext = () => {
