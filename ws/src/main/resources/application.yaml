@@ -1,0 +1,64 @@
+#spring:
+#  datasource:
+#    url: jdbc:h2:./devdb
+#    username: sa
+#  jpa:
+#    hibernate:
+##      ddl-auto: update
+#properties:
+#  javax:
+#    persistence:
+#      validation:
+#        mode: none
+#database-platform: org.hibernate.dialect.H2Dialect
+#
+# Ders45
+#
+#logging:
+#  level:
+#    org.springframework: DEBUG
+spring:
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 100
+        #        page-parameter: currentPage
+        #        size-parameter: pageSize
+  #  jackson:
+  #    mapper:
+  #      DEFAULT_VIEW_INCLUSION: true
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 10MB
+hoaxify:
+  upload-path: picture-storage
+---
+hoaxify:
+  upload-path: storage-production
+spring:
+  config:
+    activate:
+      on-profile: production
+---
+hoaxify:
+  upload-path: storage-dev
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:h2:./devdb
+    username: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+    hibernate:
+      ddl-auto: update
