@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/hoaxify.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";

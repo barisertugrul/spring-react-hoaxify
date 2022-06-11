@@ -34,7 +34,6 @@ const HoaxFeed = () => {
         const getCount = async () => {
             const response = await getNewHoaxCount(firstHoaxId, username)
             setNewHoaxCount(response.data.count)
-            console.log(newHoaxCount)
         }
         let looper = setInterval(getCount, 10000)
         return function cleanUp(){
@@ -47,8 +46,8 @@ const HoaxFeed = () => {
             try {
                 const response = await getHoaxes(username, page)
                 setHoaxPage(previousHoaxPage => ({
-                    ... response.data,
-                    content: [... previousHoaxPage.content, ... response.data.content]
+                    ...response.data,
+                    content: [...previousHoaxPage.content, ...response.data.content]
                 }))
             } catch (error) {
                 
@@ -62,23 +61,23 @@ const HoaxFeed = () => {
     const loadOldHoaxes = async () => {
         const response = await getOldHoaxes(lastHoaxId, username)
         setHoaxPage(previousHoaxPage => ({
-            ... response.data,
-            content: [... previousHoaxPage.content, ... response.data.content]
+            ...response.data,
+            content: [...previousHoaxPage.content, ...response.data.content]
         }))
     }
 
     const loadNewHoaxes = async () => {
         const response = await getNewHoaxes(firstHoaxId, username)
         setHoaxPage(previousHoaxPage => ({
-            ... previousHoaxPage,
-            content: [... response.data, ... previousHoaxPage.content]
+            ...previousHoaxPage,
+            content: [...response.data, ...previousHoaxPage.content]
         }))
         setNewHoaxCount(0)
     }
 
     const onDeleteHoaxSuccess = id => {
         setHoaxPage(previousHoaxPage => ({
-            ... previousHoaxPage,
+            ...previousHoaxPage,
             content: previousHoaxPage.content.filter(hoax => hoax.id !== id)
         }))
     }

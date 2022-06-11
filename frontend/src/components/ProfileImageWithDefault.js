@@ -12,7 +12,7 @@ const ProfileImageWithDefault = (props) => {
     return (
         <img
           src={tempimage || imageSource}
-          {... props}
+          {...props}
           onError={(event)=>{
               event.target.src=defaultPicture
           }}

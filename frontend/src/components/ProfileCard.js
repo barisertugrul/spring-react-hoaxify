@@ -52,11 +52,11 @@ const ProfileCard = (props) => {
   }, [inEditMode, displayName])
 
   useEffect(() => {
-    setValidationErrors(previousValidationErrors => ({... previousValidationErrors, displayName: undefined}))
+    setValidationErrors(previousValidationErrors => ({...previousValidationErrors, displayName: undefined}))
   },[updatedDisplayName])
 
   useEffect(() => {
-    setValidationErrors(previousValidationErrors => ({... previousValidationErrors, image: undefined}))
+    setValidationErrors(previousValidationErrors => ({...previousValidationErrors, image: undefined}))
   },[newImage])
 
   const onClickSave = async () => {
