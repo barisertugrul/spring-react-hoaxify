@@ -24,6 +24,8 @@ jobs:
     - run: npm cache clean --force
       working-directory: ./frontend
     - run: npm run build --if-present
+      env:
+        CI: false
       working-directory: ./frontend
     
     - name: copy react to spring static resources
