@@ -4,7 +4,7 @@ Backend + Frontend
 
 [Live Demo](http://34.125.211.37/#/)
 
-##Instal and Run Frontend
+## Instal and Run Frontend
 
 Download the project, extract the zip file and open the frontend folder in your editor. Then run the command below to install the dependencies.
 
@@ -35,6 +35,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-##Install and Run Backend (ws)
+## Install and Run Backend (ws)
 
 Download the project and extract it from the zip file. Import the ws folder from your editor. After the dependencies are finished installing, you can run WsAplication.
