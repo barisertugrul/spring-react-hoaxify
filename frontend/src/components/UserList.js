@@ -9,7 +9,7 @@ const UserList = () => {
 
     const [page, setPage] = useState({
         content: [],
-        size: 3,
+        size: 7,
         number: 0
     })
 

@@ -56,7 +56,7 @@ const UserLoginPage = (props) => {
                     type="password"
                 />
                 {loginError && <div className="alert alert-danger">{ loginError }</div>}
-                <div className="text-center">
+                <div className="text-center mt-2">
                     <ButtonWithProgress
                         onClick={onClickLogin}
                         disabled={!buttonEnabled || pendingApiCall}

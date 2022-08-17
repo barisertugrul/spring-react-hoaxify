@@ -79,7 +79,7 @@ const UserSignupPage = (props) => {
                     <Input name="displayName" label={t("Display Name")} error={displayNameError} onChange={onChangeHandler}></Input>
                     <Input name="password" label={t("Password")} error={passwordError} onChange={onChangeHandler} type="password" />
                     <Input name="comfirmPassword" label={t("Comfirm Password")} error={comfirmPasswordError} onChange={onChangeHandler} type="password" />
-                    <div className="text-center">
+                    <div className="text-center mt-2">
                         <ButtonWithProgress
                             onClick = { onClickSignup }
                             disabled = { pendingApiCall || comfirmPasswordError !== undefined }
