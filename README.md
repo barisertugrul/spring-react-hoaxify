@@ -43,4 +43,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # Views
 
-| [![Home page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/dashboard.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard) |
+| [![Home page]()]() |
