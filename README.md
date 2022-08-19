@@ -43,4 +43,14 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # Views
 
-| [![Home page]()]() |
+### Home Page
+![Hoaxify Home Page Screenshot](https://raw.githubusercontent.com/barisertugrul/spring-react-hoaxify/master/assets/home-page.png)
+
+### Signup Page
+![Hoaxify Signup Page Screenshot](https://raw.githubusercontent.com/barisertugrul/spring-react-hoaxify/master/assets/signup-page.png)
+
+### Login Page
+![Hoaxify Login Page Screenshot](https://raw.githubusercontent.com/barisertugrul/spring-react-hoaxify/master/assets/login-page.png)
+
+### User Page
+![Hoaxify User Page Screenshot](https://raw.githubusercontent.com/barisertugrul/spring-react-hoaxify/master/assets/user-page.png)
