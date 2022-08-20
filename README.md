@@ -2,6 +2,8 @@
 Hoaxify: Basic Social Sharing Platform - The learning project using Spring and React (Instructor: Başar Büyükkahraman)
 Backend + Frontend
 
+Course Link: [https://www.udemy.com/course/spring-ve-react-ile-web-uygulamas-gelistirmek/](https://www.udemy.com/course/spring-ve-react-ile-web-uygulamas-gelistirmek/)
+
 [Live Demo](http://34.125.73.4/#/)
 
 
